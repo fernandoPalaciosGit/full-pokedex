@@ -3,7 +3,8 @@
 	angular.module('app-pokemon', [
 	  'ngRoute',
 	  'app-pokemon.pokedex',
-	  'app-pokemon.version'
+	  'app-pokemon.pokedex.filters',
+	  'app-pokemon.version',
 	]).
 
 	config(['$routeProvider', function($routeProvider) {

@@ -48,7 +48,6 @@ header, header h1, header h2, header h3, header h4 {
   text-align: center;
   font-weight: bold;
   font-family: sans-serif, roboto;
-  text-transform: uppercase;
   line-height: 0; }
 
 h1 {
@@ -70,6 +69,9 @@ h4 {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+  padding-top: 50px; }
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -89,5 +91,19 @@ h4 {
     .menu li:before {
       content: "|";
       padding-right: 0.3em; }
+
+.navbar-brand {
+  font-weight: 800; }
+  .navbar-brand img {
+    width: 24px;
+    vertical-align: sub; }
+
+.avatar {
+  max-width: 440px;
+  width: 100%;
+  margin-bottom: 20px; }
+
+.nav-tabs {
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=app.css.map */

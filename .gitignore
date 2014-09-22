@@ -3,6 +3,11 @@ logs/*
 node_modules/
 bower_components/
 version-curso/
+images/
 tmp
 .DS_Store
 .idea
+*.map
+*.scss
+app/styles/.sass-cache/
+app/styles/.sass-cache/*
