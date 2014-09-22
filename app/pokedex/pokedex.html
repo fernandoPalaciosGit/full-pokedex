@@ -27,7 +27,7 @@
 						<li class="list-group-item">
 							<strong>type</strong>
 							<span class="pull-right">
-								<span class="label type-{{pokeType | lowercase}}"
+								<span class="label pokeType {{pokeType | lowercase}}"
 										ng-repeat="pokeType in pokemon.type">{{pokeType}}</span>
 							</span>
 						</li>
@@ -41,7 +41,10 @@
 						</li>
 						<li class="list-group-item">
 							<strong>abilities</strong>
-							<span class="pull-right">{{pokemon.abilities.join(', ')}}</span>
+							<ul class="list-pokeAblt">
+  								<li	class="pokeAblt"
+  										ng-repeat="pokeAblt in pokemon.abilities">{{pokeAblt}}</li>
+							</ul>
 						</li>
 					</ul>
 				</div>

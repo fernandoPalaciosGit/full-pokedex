@@ -16,8 +16,8 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  /*padding: 0;*/
   margin: 0;
-  padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -106,10 +106,66 @@ body {
 .nav-tabs {
   margin-bottom: 10px; }
 
-.type-grass {
-  background-color: green; }
+.list-pokeAblt {
+  list-style: disc outside none;
+  margin-top: 10px; }
 
-.type-poison {
-  background-color: purple; }
+.pokeAblt {
+  display: list-item; }
+
+.pokeType .normal {
+  background-color: #a8a878;
+  border: solid 1px #6d6d4e; }
+.pokeType.fire {
+  background-color: #f08030;
+  border: solid 1px #9c531f; }
+.pokeType.fighting {
+  background-color: #c03028;
+  border: solid 1px #7d1f1a; }
+.pokeType.water {
+  background-color: #6890f0;
+  border: solid 1px #445e9c; }
+.pokeType.flying {
+  background-color: #a890f0;
+  border: solid 1px #6d5e9c; }
+.pokeType.grass {
+  background-color: #78c850;
+  border: solid 1px #4e8234; }
+.pokeType.poison {
+  background-color: #a040a0;
+  border: solid 1px #c183c1; }
+.pokeType.eletric {
+  background-color: #f8d030;
+  border: solid 1px #a1871f; }
+.pokeType.ground {
+  background-color: #e0c068;
+  border: solid 1px #927d44; }
+.pokeType.psychic {
+  background-color: #f85888;
+  border: solid 1px #a13959; }
+.pokeType.rock {
+  background-color: #b8a038;
+  border: solid 1px #786824; }
+.pokeType.ice {
+  background-color: #98d8d8;
+  border: solid 1px #638d8d; }
+.pokeType.bug {
+  background-color: #a8b820;
+  border: solid 1px #6d7815; }
+.pokeType.dragon {
+  background-color: #7038f8;
+  border: solid 1px #4924a1; }
+.pokeType.ghost {
+  background-color: #705898;
+  border: solid 1px #493963; }
+.pokeType.dark {
+  background-color: #705848;
+  border: solid 1px #49392f; }
+.pokeType.steel {
+  background-color: #b8b8d0;
+  border: solid 1px #787887; }
+.pokeType.fairy {
+  background-color: #ee99ac;
+  border: solid 1px #9b6470; }
 
 /*# sourceMappingURL=app.css.map */
