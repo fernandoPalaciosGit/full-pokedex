@@ -106,4 +106,10 @@ body {
 .nav-tabs {
   margin-bottom: 10px; }
 
+.type-grass {
+  background-color: green; }
+
+.type-poison {
+  background-color: purple; }
+
 /*# sourceMappingURL=app.css.map */

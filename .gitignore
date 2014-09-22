@@ -9,5 +9,4 @@ tmp
 .idea
 *.map
 *.scss
-app/styles/.sass-cache/
-app/styles/.sass-cache/*
+**/.sass-cache/*

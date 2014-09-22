@@ -26,7 +26,10 @@
 					<ul class="list-group">
 						<li class="list-group-item">
 							<strong>type</strong>
-							<span class="pull-right">{{pokemon.type.join(', ')}}</span>
+							<span class="pull-right">
+								<span class="label type-{{pokeType | lowercase}}"
+										ng-repeat="pokeType in pokemon.type">{{pokeType}}</span>
+							</span>
 						</li>
 						<li class="list-group-item">
 							<strong>height</strong>
