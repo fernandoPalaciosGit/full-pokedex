@@ -21,15 +21,15 @@
 			<div class="col-md-6 pokedex">
 				<!-- NAVIGATE IN TABS -->
 				<ul class="nav nav-tabs nav-justified">
-	           <li class="active"><a href="#">pokedex</a></li>
-	           <li><a href="#">stats</a></li>
-	           <li><a href="#">evolution</a></li>
+	           <li ng-class=" { active : tab === 1 }"><a ng-click="tab = 1">pokedex</a></li>
+	           <li ng-class=" { active : tab === 2 }"><a ng-click="tab = 2">stats</a></li>
+	           <li ng-class=" { active : tab === 3 }"><a ng-click="tab = 3">evolution</a></li>
 	         </ul>
 
 	         <div class="tab-content">
 	         	<!-- POKEDEX GENERAL PROPERTIES -->
-	         	<div class="record">
-						<h2>pokedex from {{pokemon.name | uppercase}}</h2>
+	         	<div class="record" ng-show="tab === 1">
+						<h2>qualities from {{pokemon.name | uppercase}}</h2>
 						<ul class="list-group">
 							<li class="list-group-item">
 								<strong>type</strong>
@@ -57,7 +57,7 @@
 	         	</div>
 
 	         	<!-- POKEDEX STATS -->
-	         	<div class="stats">
+	         	<div class="stats" ng-show="tab === 2">
 	         		<h3>status from {{pokemon.name}}</h3>
 	         		<ul class="list-group">
 	                  <li class="list-group-item">
@@ -92,7 +92,7 @@
 	         	</div>
 
 	         	<!-- POKEDEX EVOLUTIONS -->
-	         	<div class="evolution">
+	         	<div class="evolution" ng-show="tab === 3">
 	         		<h3>{{pokemon.imagesName.evolution.length}} evolutions from {{pokemon.name}}</h3>
 	         		<div class="pokeEvo-list" ng-repeat="pokeEvo in pokemon.imagesName.evolution">
 	                  <a href="#">

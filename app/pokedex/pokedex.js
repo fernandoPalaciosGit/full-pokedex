@@ -2,7 +2,7 @@
 
 	var PokedexController = function($scope){
 		var urlImages = "images/pokemon/";
-		
+
 		$scope.pokemon = {
 			id: "001",
 			name: 'Bulbasaur',
@@ -25,6 +25,8 @@
 				evolution: [ "Bulbasaur", "Ivysaur", "Venusaur" ]
 			}
 		};
+
+		$scope.tab = 1;
 
 		$scope.getUrlImg = function( pokeId ){
 			return urlImages+pokeId;
