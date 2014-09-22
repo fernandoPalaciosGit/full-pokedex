@@ -8,9 +8,26 @@
 			type: ['grass', 'poison'],
 			height: "2′4″ (0.71m)",
 			weight: "15.2 lbs (6.9 kg)",
-			imgUrl: 'bulbasaur-mini',
-			abilities: ['OverGrow', 'Chlorophyll'] 
+			abilities: ['OverGrow', 'Chlorophyll'],
+			stats: {
+				hp: 45,
+				attack: 49,
+				defense: 49,
+				"sp.atk": 65,
+				"sp.def": 65,
+				speed: 45,
+				total: 318
+			},
+			imagesName: {
+				avatar: 'avatar-bulbasaur',
+				evolution: [ "Bulbasaur", "Ivysaur", "Venusaur" ]
+			}
 		};
+
+		$scope.getUrlImg = function( pokeId ){
+			return 'images/pokemon/'+pokeId;
+		};
+
 	};
 
 	angular.module('app-pokemon.pokedex', ['ngRoute'])

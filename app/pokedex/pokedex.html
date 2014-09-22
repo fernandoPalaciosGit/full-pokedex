@@ -10,7 +10,7 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<img	src="{{pokemon.imgUrl | urlImg:'images/pkm/':'png'}}"
+				<img	src="{{pokemon.imagesName.avatar | urlImg : getUrlImg( pokemon.id ) : 'png'}}"
 						class="avatar center-block img-responsive" alt="image from {{pokemon.name}}">
 			</div>
 			
