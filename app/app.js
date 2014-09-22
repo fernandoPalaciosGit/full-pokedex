@@ -4,6 +4,7 @@
 	  'ngRoute',
 	  'app-pokemon.pokedex',
 	  'app-pokemon.pokedex.filters',
+	  'app-pokemon.pokedex.directives',
 	  'app-pokemon.version',
 	]).
 

@@ -44,11 +44,10 @@ html {
   -webkit-font-smoothing: antialiased;
   /*solo MAC, efecto antialiasing, renderice mejor el texto e imagenes*/ }
 
-header, header h1, header h2, header h3, header h4 {
-  text-align: center;
+h1, h2, h3, h4 {
   font-weight: bold;
-  font-family: sans-serif, roboto;
-  line-height: 0; }
+  font-family: sans-serif;
+  line-height: 1em; }
 
 h1 {
   font-size: 2em;
@@ -62,56 +61,41 @@ h3 {
   font-size: 1.17em;
   margin: 1em 0; }
 
-h4 {
-  font-size: 1em;
-  margin: 1.33em 0; }
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-body {
-  padding-top: 50px; }
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em; }
-  .menu a:link {
-    color: blue; }
-  .menu:before {
-    content: "["; }
-  .menu:after {
-    content: "]"; }
-  .menu li:nth-child(1):before {
-    content: "";
-    padding: 0; }
-  .menu li {
-    display: inline; }
-    .menu li:before {
-      content: "|";
-      padding-right: 0.3em; }
-
-.navbar-brand {
-  font-weight: 800; }
-  .navbar-brand img {
+.header-pokedex {
+  margin-bottom: 50px; }
+  .header-pokedex .navbar {
+    font-weight: bold;
+    padding: 5px 0 10px; }
+  .header-pokedex .glyph {
     width: 24px;
-    vertical-align: sub; }
+    vertical-align: middle; }
 
-.avatar {
+.view-pokemon li, .view-pokemon h2:first-letter, .view-pokemon h3:first-letter {
+  text-transform: capitalize; }
+.view-pokemon .avatar {
   max-width: 440px;
   width: 100%;
   margin-bottom: 20px; }
-
-.nav-tabs {
+.view-pokemon .nav-tabs {
+  text-transform: capitalize;
   margin-bottom: 10px; }
-
-.list-pokeAblt {
+.view-pokemon .list-pokeAblt {
   list-style: disc outside none;
   margin-top: 10px; }
-
-.pokeAblt {
+.view-pokemon .pokeAblt {
   display: list-item; }
+
+.evolution .pokeEvo-list {
+  text-align: center; }
+.evolution .glyphicon {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 2em; }
+.evolution img {
+  max-width: 150px; }
 
 .pokeType .normal {
   background-color: #a8a878;

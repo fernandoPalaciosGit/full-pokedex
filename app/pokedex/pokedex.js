@@ -1,6 +1,8 @@
 (function(){
 
 	var PokedexController = function($scope){
+		var urlImages = "images/pokemon/";
+		
 		$scope.pokemon = {
 			id: "001",
 			name: 'Bulbasaur',
@@ -19,13 +21,13 @@
 				total: 318
 			},
 			imagesName: {
-				avatar: 'avatar-bulbasaur',
+				avatar: 'avatar-Bulbasaur',
 				evolution: [ "Bulbasaur", "Ivysaur", "Venusaur" ]
 			}
 		};
 
 		$scope.getUrlImg = function( pokeId ){
-			return 'images/pokemon/'+pokeId;
+			return urlImages+pokeId;
 		};
 
 	};
