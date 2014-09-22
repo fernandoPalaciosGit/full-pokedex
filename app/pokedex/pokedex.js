@@ -26,23 +26,29 @@
 			}
 		};
 
-		$scope.tab = 1;
-
 		$scope.getUrlImg = function( pokeId ){
 			return urlImages+pokeId;
 		};
+	};
 
+	var TabsController = function($scope){
+		$scope.tab = 1;
+
+		$scope.selecTab = function( tab ){
+			$scope.tab = tab;		
+		};
 	};
 
 	angular.module('app-pokemon.pokedex', ['ngRoute'])
 
 	.config(['$routeProvider', function($routeProvider){
-		$routeProvider.when('/pokedex', {
-			templateUrl: 'pokedex/pokedex.html',
-			controller: 'PokedexCtrl'
-		});
+		$routeProvider
+			.when('/pokedex', {
+				templateUrl: 'pokedex/pokedex.html'
+			});
 	}])
 
-	.controller('PokedexCtrl', ['$scope', PokedexController]); 
+	.controller('PokedexCtrl', ['$scope', PokedexController])
 
+	.controller('TabsCtrl', ['$scope', TabsController]);
 }());

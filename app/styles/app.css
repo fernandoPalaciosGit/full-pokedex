@@ -65,15 +65,15 @@ h3 {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-.header-pokedex {
-  margin-bottom: 50px; }
-  .header-pokedex .navbar {
-    font-weight: bold;
-    padding: 5px 0 10px; }
-  .header-pokedex .glyph {
-    width: 24px;
-    vertical-align: middle; }
+.header-pokedex .navbar {
+  font-weight: bold;
+  padding: 5px 0 10px; }
+.header-pokedex .glyph {
+  width: 24px;
+  vertical-align: middle; }
 
+.view-pokemon:first-child {
+  margin-top: 90px; }
 .view-pokemon li, .view-pokemon h2:first-letter, .view-pokemon h3:first-letter {
   text-transform: capitalize; }
 .view-pokemon .avatar {

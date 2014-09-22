@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="PokedexCtrl">
 	<article class="view-pokemon">
 		<div class="page-header">
 			<h1> {{pokemon.name | uppercase}}
@@ -18,12 +18,12 @@
 						data-ext="png">
 			</div>
 			
-			<div class="col-md-6 pokedex">
+			<div class="col-md-6 pokedex" ng-controller="TabsCtrl">
 				<!-- NAVIGATE IN TABS -->
 				<ul class="nav nav-tabs nav-justified">
-	           <li ng-class=" { active : tab === 1 }"><a ng-click="tab = 1">pokedex</a></li>
-	           <li ng-class=" { active : tab === 2 }"><a ng-click="tab = 2">stats</a></li>
-	           <li ng-class=" { active : tab === 3 }"><a ng-click="tab = 3">evolution</a></li>
+	           <li ng-class=" { active : tab === 1 }"><a ng-click="selecTab(1)">pokedex</a></li>
+	           <li ng-class=" { active : tab === 2 }"><a ng-click="selecTab(2)">stats</a></li>
+	           <li ng-class=" { active : tab === 3 }"><a ng-click="selecTab(3)">evolution</a></li>
 	         </ul>
 
 	         <div class="tab-content">
