@@ -75,8 +75,13 @@
 
 		// store coments and reset user comment model
 		$scope.submitComment = function(){
-			$scope.comments.push( $scope.userComment );
-			resetUserComment();
+			// allow only by requirements and validate inputs
+			if( !!$scope.commentsForm.$valid ){
+				$scope.comments.push( $scope.userComment );
+				resetUserComment();
+				// return not yet action to form inputs
+				$scope.commentsForm.$setPristine()
+			}
 		};
 	};
 
