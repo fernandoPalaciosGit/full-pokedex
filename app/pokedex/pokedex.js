@@ -40,7 +40,12 @@
 	};
 
 	var CommentsController = function($scope){
-		$scope.comments =[];
+		$scope.comments = [];
+		$scope.userComment = {
+			body: '',
+			email: '',
+			anonymous: false
+		};
 		$scope.showPannel = false;
 		$scope.togglePannel = function(){
 			$scope.showPannel = !$scope.showPannel;
