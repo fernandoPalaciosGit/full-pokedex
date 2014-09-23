@@ -1,17 +1,21 @@
 (function(){
-	// Declare app level module which depends on views, and components
-	angular.module('app-pokemon', [
+
+	angular.module('pokeBoxApp', [
 	  'ngRoute',
-	  'app-pokemon.pokedex',
-	  'app-pokemon.pokedex.filters',
-	  'app-pokemon.pokedex.util-directives',
-	  'app-pokemon.pokedex.partial-directives',
-	  'app-pokemon.version',
+	  'pokeBoxApp.version',
+	  
+	  // modules of pokemon
+	  'pokeBoxApp.pokemon', // routing
+	  'pokeBoxApp.pokemon.filters', // filters
+	  'pokeBoxApp.pokemon.controllers', // controllers
+	  'pokeBoxApp.pokemon.util-directives', // several directives
+	  'pokeBoxApp.pokemon.partial-directives' //templates directives
+
+	  // modules of pokedex
 	]).
 
 	config(['$routeProvider', function($routeProvider) {
-	  $routeProvider.otherwise({redirectTo: '/pokedex'});
+	  $routeProvider.otherwise({redirectTo: '/pokemon'});
 	}]);
-	
 }());
  

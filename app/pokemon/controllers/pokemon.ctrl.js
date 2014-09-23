@@ -1,8 +1,4 @@
-////////////////////////////////////
-// MODULE : 'app-pokemon.pokedex' //
-////////////////////////////////////
 (function(){
-	// CONTROLLER
 	var PokedexController = function($scope){
 		var urlImages = "images/pokemon/";
 
@@ -34,7 +30,6 @@
 		};
 	};
 
-	// CONTROLLER
 	var TabsController = function($scope){
 		$scope.tab = 1;
 
@@ -43,15 +38,7 @@
 		};
 	};
 
-	// MODULE SETTINGS 
-	angular.module('app-pokemon.pokedex', ['ngRoute'])
-
-	.config(['$routeProvider', function($routeProvider){
-		$routeProvider
-			.when('/pokedex', {
-				templateUrl: 'pokedex/pokedex.html'
-			});
-	}])
+	angular.module('pokeBoxApp.pokemon.controllers', [])
 
 	.controller('PokedexCtrl', ['$scope', PokedexController])
 

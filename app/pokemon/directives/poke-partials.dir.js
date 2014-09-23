@@ -40,50 +40,49 @@
 		};
 	};
 
-	angular.module('app-pokemon.pokedex.partial-directives', [])
+	angular.module('pokeBoxApp.pokemon.partial-directives', [])
 
 	.directive('pokedexData', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokedex/directives/partials/data.tmpl.html'
+			templateUrl: 'pokemon/directives/partials/poke-data.tmpl.html'
 		};
 	}])
 
 	.directive('pokedexStats', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokedex/directives/partials/stats.tmpl.html'
+			templateUrl: 'pokemon/directives/partials/poke-stats.tmpl.html'
 		};
 	}])
 
 	.directive('pokedexEvolution', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokedex/directives/partials/evol.tmpl.html'
+			templateUrl: 'pokemon/directives/partials/poke-evol.tmpl.html'
 		};
 	}])
 
 	.directive('pokemonName', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokedex/directives/partials/poke-name.tmpl.html'
+			templateUrl: 'pokemon/directives/partials/poke-name.tmpl.html'
 		};
 	}])
 
 	.directive('pokemonImage', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokedex/directives/partials/poke-image.tmpl.html'
+			templateUrl: 'pokemon/directives/partials/poke-image.tmpl.html'
 		};
 	}])
 
 	.directive('pokedexComments', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: "pokedex/directives/partials/pokedex-comments.tmpl.html",
-			// controllerAs: 'CommentsCtrl',
+			templateUrl: "pokemon/directives/partials/poke-comments.tmpl.html",
+			// controllerAs: 'CommentsCtrl', // no necessary with $scope
 			controller: ['$scope', CommentsController]
 		};
 	}]);
-
 }( ) );

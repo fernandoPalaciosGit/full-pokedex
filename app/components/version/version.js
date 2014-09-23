@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app-pokemon.version', [
+angular.module('pokeBoxApp.version', [
   'app-pokemon.version.version-directive'
 ])
 

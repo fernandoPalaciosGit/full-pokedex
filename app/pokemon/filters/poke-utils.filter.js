@@ -1,6 +1,6 @@
 ( function( ){
 
-	angular.module('app-pokemon.pokedex.filters', [])
+	angular.module('pokeBoxApp.pokemon.filters', [])
 
 	.filter('urlImg', [function(){
 		return function(resource, uri, ext) {
