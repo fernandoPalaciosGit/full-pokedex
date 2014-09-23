@@ -1,0 +1,31 @@
+<h3>status from {{pokemon.name}}</h3>
+<ul class="list-group">
+   <li class="list-group-item">
+     <strong><abbr title="horse power">hp</abbr></strong>
+     <span class="badge">{{pokemon.stats.hp}}</span>
+   </li>
+   <li class="list-group-item">
+     <strong>attack</strong>
+     <span class="badge">{{pokemon.stats.attack}}</span>
+   </li>
+   <li class="list-group-item">
+     <strong>defense</strong>
+     <span class="badge">{{pokemon.stats.defense}}</span>
+   </li>
+   <li class="list-group-item">
+     <strong>special attack</strong>
+     <span class="badge">{{pokemon.stats['sp.atk']}}</span>
+   </li>
+   <li class="list-group-item">
+     <strong>special defense</strong>
+     <span class="badge">{{pokemon.stats['sp.def']}}</span>
+   </li>
+   <li class="list-group-item">
+     <strong>speed</strong>
+     <span class="badge">{{pokemon.stats.speed}}</span>
+   </li>
+   <li class="list-group-item">
+     <strong>total</strong>
+     <span class="badge">{{pokemon.stats.total}}</span>
+   </li>
+ </ul>

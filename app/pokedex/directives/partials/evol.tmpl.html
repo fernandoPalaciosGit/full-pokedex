@@ -1,0 +1,14 @@
+<h3>{{pokemon.imagesName.evolution.length}} evolutions from {{pokemon.name}}</h3>
+<div class="pokeEvo-list" ng-repeat="pokeEvo in pokemon.imagesName.evolution">
+   <a href="#">
+   	<img	alt="image from {{pokeEvo}} evolution"
+				image-pokedex
+				data-uri="{{getUrlImg( pokemon.id )}}"
+				data-resource="{{pokeEvo}}"
+				data-ext="jpg">
+     <p>
+       <strong>{{pokeEvo}}</strong>
+     </p>
+   </a>
+   <span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
+ </div>

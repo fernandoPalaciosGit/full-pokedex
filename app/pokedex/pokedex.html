@@ -1,21 +1,12 @@
 <div class="container" ng-controller="PokedexCtrl">
 	<article class="view-pokemon">
 		<div class="page-header">
-			<h1> {{pokemon.name | uppercase}}
-				<small>{{pokemon.species}}</small>
-				<span class="label label-primary pull-right">#{{pokemon.id}}</span>
-			</h1>
+			<pokemon-name></pokemon-name>
 		</div>
-
 
 		<div class="row">
 			<div class="col-md-6">
-
-				<img	class="avatar center-block" alt="image from {{pokemon.name}}"
-						image-pokedex
-						data-uri="{{getUrlImg( pokemon.id )}}"
-						data-resource="{{pokemon.imagesName.avatar}}"
-						data-ext="png">
+				<pokemon-image></pokemon-image>
 			</div>
 			
 			<div class="col-md-6 pokedex" ng-controller="TabsCtrl">
@@ -29,60 +20,17 @@
 	         <div class="tab-content">
 	         	<!-- POKEDEX GENERAL PROPERTIES -->
 	         	<div class="record" ng-show="tab === 1">
-	         		<pokedex-tmpl></pokedex-tmpl>
+	         		<pokedex-data></pokedex-data>
 	         	</div>
 
 	         	<!-- POKEDEX STATS -->
 	         	<div class="stats" ng-show="tab === 2">
-	         		<h3>status from {{pokemon.name}}</h3>
-	         		<ul class="list-group">
-	                  <li class="list-group-item">
-	                    <strong><abbr title="horse power">hp</abbr></strong>
-	                    <span class="badge">{{pokemon.stats.hp}}</span>
-	                  </li>
-	                  <li class="list-group-item">
-	                    <strong>attack</strong>
-	                    <span class="badge">{{pokemon.stats.attack}}</span>
-	                  </li>
-	                  <li class="list-group-item">
-	                    <strong>defense</strong>
-	                    <span class="badge">{{pokemon.stats.defense}}</span>
-	                  </li>
-	                  <li class="list-group-item">
-	                    <strong>special attack</strong>
-	                    <span class="badge">{{pokemon.stats['sp.atk']}}</span>
-	                  </li>
-	                  <li class="list-group-item">
-	                    <strong>special defense</strong>
-	                    <span class="badge">{{pokemon.stats['sp.def']}}</span>
-	                  </li>
-	                  <li class="list-group-item">
-	                    <strong>speed</strong>
-	                    <span class="badge">{{pokemon.stats.speed}}</span>
-	                  </li>
-	                  <li class="list-group-item">
-	                    <strong>total</strong>
-	                    <span class="badge">{{pokemon.stats.total}}</span>
-	                  </li>
-	                </ul>
+	         		<pokedex-stats></pokedex-stats>
 	         	</div>
 
 	         	<!-- POKEDEX EVOLUTIONS -->
 	         	<div class="evolution" ng-show="tab === 3">
-	         		<h3>{{pokemon.imagesName.evolution.length}} evolutions from {{pokemon.name}}</h3>
-	         		<div class="pokeEvo-list" ng-repeat="pokeEvo in pokemon.imagesName.evolution">
-	                  <a href="#">
-	                  	<img	alt="image from {{pokeEvo}} evolution"
-										image-pokedex
-										data-uri="{{getUrlImg( pokemon.id )}}"
-										data-resource="{{pokeEvo}}"
-										data-ext="jpg">
-	                    <p>
-	                      <strong>{{pokeEvo}}</strong>
-	                    </p>
-	                  </a>
-	                  <span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
-	                </div>
+	         		<pokedex-evolution></pokedex-evolution>
 	         	</div>
 				</div>
 			</div> <!-- TabsController -->
