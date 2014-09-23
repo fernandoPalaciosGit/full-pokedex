@@ -143,7 +143,8 @@
 	                  			placeholder="Please enter your email address"
 	                  			ng-disabled=" !!userComment.anonymous ">
 	                  <label>
-	                    <input	id="anonymous" ng-model="userComment.anonymous" type="checkbox">
+	                    <input	id="anonymous" ng-model="userComment.anonymous" type="checkbox"
+	                    			ng-change=" isAnonymous() ">
 	                    Anonymous
 	                  </label>
 	                </div>

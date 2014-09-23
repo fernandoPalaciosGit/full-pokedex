@@ -52,7 +52,10 @@
 			$scope.showPannel = !$scope.showPannel;
 		};
 
-		// disable and emptying email
+		// emptying email if anonymous 
+		$scope.isAnonymous = function(){
+			if( !!$scope.userComment.anonymous ) $scope.userComment.email = '';
+		};
 
 	};
 
