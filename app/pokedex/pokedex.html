@@ -132,7 +132,7 @@
 
 	          <div class="panel-body">
 	          	<!-- FORM COMMENTS -->
-	            <form class="form-horizontal" role="form">
+	            <form class="form-horizontal" role="form" ng-submit=" submitComment() ">
 	              <div class="form-group">
 	                <div class="col-sm-6">
 	                  <textarea	class="form-control" ng-model="userComment.body"
@@ -149,20 +149,20 @@
 	                  </label>
 	                </div>
 	                <div class="col-sm-2">
-	                  <button class="btn btn-sm btn-block">Comment</button>
+	                  <button type="submit" class="btn btn-sm btn-block">Comment</button>
 	                </div>
 	              </div>
 	            </form>
 					
 					<!-- SHOW COMMENTS -->
-	            <blockquote>
-	              <p>{{userComment.body}}</p>
+	            <blockquote ng-repeat="comment in comments">
+	              <p>{{comment.body}}</p>
 	              <footer>
 		                Comment by 
-		                <a	ng-if=" !userComment.anonymous "
-		                		href="mailto:{{userComment.email}}"> {{userComment.email}}</a> 
-		                <em ng-if=" !!userComment.anonymous ">anonimous user</em>
-		                on <span>Sep 12, 2014, 11:00:00 PM</span>
+		                <a	ng-if=" !comment.anonymous "
+		                		href="mailto:{{comment.email}}"> {{comment.email}}</a> 
+		                <em ng-if=" !!comment.anonymous ">anonimous user</em>
+		                on <span> {{comment.date | date:'medium'}} </span>
 	              </footer>
 	            </blockquote>
 	          </div>

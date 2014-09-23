@@ -1,5 +1,8 @@
+////////////////////////////////////
+// MODULE : 'app-pokemon.pokedex' //
+////////////////////////////////////
 (function(){
-
+	// CONTROLLER
 	var PokedexController = function($scope){
 		var urlImages = "images/pokemon/";
 
@@ -31,6 +34,7 @@
 		};
 	};
 
+	// CONTROLLER
 	var TabsController = function($scope){
 		$scope.tab = 1;
 
@@ -39,13 +43,25 @@
 		};
 	};
 
+	// CONTROLLER
 	var CommentsController = function($scope){
 		$scope.comments = [];
-		$scope.userComment = {
-			body: '',
-			email: '',
-			anonymous: false
+		
+		$scope.userComment = {};
+
+		var resetUserComment = function(){
+			$scope.userComment = {
+				body: '',
+				email: '',
+				anonymous: false,
+				date: Date.now()
+			};
 		};
+
+		/* reset use comment model when controller is loaded
+		(when the template is initialized)*/
+		resetUserComment();
+
 		$scope.showPannel = false;
 
 		$scope.togglePannel = function(){
@@ -57,8 +73,14 @@
 			if( !!$scope.userComment.anonymous ) $scope.userComment.email = '';
 		};
 
+		// store coments and reset user comment model
+		$scope.submitComment = function(){
+			$scope.comments.push( $scope.userComment );
+			resetUserComment();
+		};
 	};
 
+	// MODULE SETTINGS 
 	angular.module('app-pokemon.pokedex', ['ngRoute'])
 
 	.config(['$routeProvider', function($routeProvider){
