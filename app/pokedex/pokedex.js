@@ -39,6 +39,14 @@
 		};
 	};
 
+	var CommentsController = function($scope){
+		$scope.comments =[];
+		$scope.showPannel = false;
+		$scope.togglePannel = function(){
+			$scope.showPannel = !$scope.showPannel;
+		}
+	};
+
 	angular.module('app-pokemon.pokedex', ['ngRoute'])
 
 	.config(['$routeProvider', function($routeProvider){
@@ -50,5 +58,7 @@
 
 	.controller('PokedexCtrl', ['$scope', PokedexController])
 
-	.controller('TabsCtrl', ['$scope', TabsController]);
+	.controller('TabsCtrl', ['$scope', TabsController])
+
+	.controller('CommentsCtrl', ['$scope', CommentsController]);
 }());
