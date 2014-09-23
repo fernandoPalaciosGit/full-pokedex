@@ -47,9 +47,13 @@
 			anonymous: false
 		};
 		$scope.showPannel = false;
+
 		$scope.togglePannel = function(){
 			$scope.showPannel = !$scope.showPannel;
-		}
+		};
+
+		// disable and emptying email
+
 	};
 
 	angular.module('app-pokemon.pokedex', ['ngRoute'])
