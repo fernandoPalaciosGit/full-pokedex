@@ -132,15 +132,19 @@
 
 	          <div class="panel-body">
 	          	<!-- FORM COMMENTS -->
-	            <form class="form-horizontal" role="form" ng-submit=" submitComment() ">
+	            <form class="form-horizontal" role="form" ng-submit=" submitComment() "
+	            		novalidate name="commentsForm">
 	              <div class="form-group">
 	                <div class="col-sm-6">
 	                  <textarea	class="form-control" ng-model="userComment.body"
-	                  				placeholder="Please tell us what you think about {{pokemon.name | uppercase}}"></textarea>
+	                  				placeholder="tell us what you think about {{pokemon.name | uppercase}}"
+	                  				required="required">
+	                  </textarea>
 	                </div>
 	                <div class="col-sm-4">
 	                  <input	type="email" ng-model="userComment.email" class="form-control"
 	                  			placeholder="Please enter your email address"
+	                  			ng-required=" !userComment.anonymous "
 	                  			ng-disabled=" !!userComment.anonymous ">
 	                  <label>
 	                    <input	id="anonymous" ng-model="userComment.anonymous" type="checkbox"
@@ -153,6 +157,11 @@
 	                </div>
 	              </div>
 	            </form>
+
+	            <!-- MESSAGE FROM FORM VALIDATE -->
+	            <h3>	form valid: {{commentsForm.$valid}}
+	            		<span class="sr-only">if no errors in inputs or are empty</span>
+	           	</h3>
 					
 					<!-- SHOW COMMENTS -->
 	            <blockquote ng-repeat="comment in comments">

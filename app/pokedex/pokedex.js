@@ -54,7 +54,7 @@
 				body: '',
 				email: '',
 				anonymous: false,
-				date: Date.now()
+				date: Date.now() //+new Date() === Date.now()
 			};
 		};
 
