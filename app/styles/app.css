@@ -155,4 +155,10 @@ h3 {
   background-color: #ee99ac;
   border: solid 1px #9b6470; }
 
+/*Angle takes advantage of html5 validation forms and binding classes on inputs*/
+.form-control.ng-invalid.ng-dirty {
+  border-color: red; }
+.form-control.ng-valid.ng-dirty {
+  border-color: green; }
+
 /*# sourceMappingURL=app.css.map */

@@ -80,7 +80,7 @@
 				$scope.comments.push( $scope.userComment );
 				resetUserComment();
 				// return not yet action to form inputs
-				$scope.commentsForm.$setPristine()
+				$scope.commentsForm.$setPristine();
 			}
 		};
 	};
