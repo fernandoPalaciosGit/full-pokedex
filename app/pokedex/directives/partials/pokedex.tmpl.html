@@ -1,0 +1,26 @@
+<!-- POKEDEX GENERAL PROPERTIES -->
+<h2>qualities from {{pokemon.name | uppercase}}</h2>
+<ul class="list-group">
+	<li class="list-group-item">
+		<strong>type</strong>
+		<span class="pull-right">
+			<span class="label pokeType {{pokeType | lowercase}}"
+					ng-repeat="pokeType in pokemon.type">{{pokeType}}</span>
+		</span>
+	</li>
+	<li class="list-group-item">
+		<strong>height</strong>
+		<span class="pull-right">{{pokemon.height}}</span>
+	</li>
+	<li class="list-group-item">
+		<strong>weight</strong>
+		<span class="pull-right">{{pokemon.weight}}</span>
+	</li>
+	<li class="list-group-item">
+		<strong>abilities</strong>
+		<ul class="list-pokeAblt">
+				<li	class="pokeAblt"
+						ng-repeat="pokeAblt in pokemon.abilities">{{pokeAblt}}</li>
+		</ul>
+	</li>
+</ul>

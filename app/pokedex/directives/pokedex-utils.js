@@ -1,6 +1,6 @@
 ( function( ){
 
-	angular.module('app-pokemon.pokedex.directives', [])
+	angular.module('app-pokemon.pokedex.util-directives', [])
 
 	.directive('imagePokedex', [function(){
 		return {
