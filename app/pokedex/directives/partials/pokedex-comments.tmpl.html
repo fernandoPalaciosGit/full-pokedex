@@ -1,0 +1,76 @@
+<button	class="btn btn-prymary"
+			ng-hide=" !!showPannel "
+			ng-click="togglePannel()">show comments <span class="badge">{{comments.length}}</span></button>
+
+<div	class="panel panel-primary"
+		ng-show=" !!showPannel ">
+
+    <div class="panel-heading">
+      <h1 class="panel-title">Comments 
+      	<button	class="close pull-right"
+      				ng-click="togglePannel()">&times;</button>
+      </h1>
+    </div>
+
+    <div class="panel-body">
+    	<!-- FORM COMMENTS -->
+      <form class="form-horizontal" role="form"
+      		ng-submit=" submitComment() "
+      		novalidate name="commentsForm">
+        <div class="form-group">
+          <div class="col-sm-6">
+            <textarea	class="form-control" ng-model="userComment.body"
+            				name="commentBody"
+            				placeholder="tell us what you think about {{pokemon.name | uppercase}}"
+            				required="required">
+            </textarea>
+          </div>
+          <div class="col-sm-4">
+            <input	type="email" ng-model="userComment.email" class="form-control"
+            			name="commentEmail"
+            			placeholder="Please enter your email address"
+            			ng-required=" !userComment.anonymous "
+            			ng-disabled=" !!userComment.anonymous ">
+            <label>
+              <input	id="anonymous" ng-model="userComment.anonymous" type="checkbox"
+              			ng-change=" isAnonymous() ">
+              Anonymous
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <button type="submit" class="btn btn-sm btn-block">Comment</button>
+          </div>
+        </div>
+      </form>
+		
+      <!-- ALERTS FROM FORM VALIDATE -->
+      <div ng-if=" !commentsForm.$pristine && !commentsForm.$valid ">
+      		<h3>Fom Invalid</h3>
+      		<span class="sr-only">if no errors in inputs or are empty</span>
+
+      		<div	class="alert alert-warning" role="alert"
+      				ng-show=" !commentsForm.commentBody.$valid ">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				  <strong>Warning!</strong> required any comment.
+				</div>
+
+      		<div	class="alert alert-warning" role="alert"
+      				ng-show=" !commentsForm.commentEmail.$valid ">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				  <strong>Warning!</strong> Email invalid.
+				</div>
+     	</div>
+		
+		<!-- SHOW COMMENTS -->
+      <blockquote ng-repeat="comment in comments">
+        <p>{{comment.body}}</p>
+        <footer>
+             Comment by 
+             <a	ng-if=" !comment.anonymous "
+             		href="mailto:{{comment.email}}"> {{comment.email}}</a> 
+             <em ng-if=" !!comment.anonymous ">anonimous user</em>
+             on <span> {{comment.date | date:'medium'}} </span>
+        </footer>
+      </blockquote>
+    </div>
+ </div>

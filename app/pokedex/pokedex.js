@@ -43,48 +43,6 @@
 		};
 	};
 
-	// CONTROLLER
-	var CommentsController = function($scope){
-		$scope.comments = [];
-		
-		$scope.userComment = {};
-
-		var resetUserComment = function(){
-			$scope.userComment = {
-				body: '',
-				email: '',
-				anonymous: false,
-				date: Date.now() //+new Date() === Date.now()
-			};
-		};
-
-		/* reset use comment model when controller is loaded
-		(when the template is initialized)*/
-		resetUserComment();
-
-		$scope.showPannel = false;
-
-		$scope.togglePannel = function(){
-			$scope.showPannel = !$scope.showPannel;
-		};
-
-		// emptying email if anonymous 
-		$scope.isAnonymous = function(){
-			if( !!$scope.userComment.anonymous ) $scope.userComment.email = '';
-		};
-
-		// store coments and reset user comment model
-		$scope.submitComment = function(){
-			// allow only by requirements and validate inputs
-			if( !!$scope.commentsForm.$valid ){
-				$scope.comments.push( $scope.userComment );
-				resetUserComment();
-				// return not yet action to form inputs
-				$scope.commentsForm.$setPristine();
-			}
-		};
-	};
-
 	// MODULE SETTINGS 
 	angular.module('app-pokemon.pokedex', ['ngRoute'])
 
@@ -97,7 +55,5 @@
 
 	.controller('PokedexCtrl', ['$scope', PokedexController])
 
-	.controller('TabsCtrl', ['$scope', TabsController])
-
-	.controller('CommentsCtrl', ['$scope', CommentsController]);
+	.controller('TabsCtrl', ['$scope', TabsController]);
 }());
