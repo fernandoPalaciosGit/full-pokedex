@@ -9,11 +9,11 @@
 			imgName = imgName	.replace('♀', 'f')			//Nidoran♀
 									.replace('♂', 'm')			//Nidoran♂
 									.replace(/\'|\.|\s/g, ''); //Farfetch'd, Mr. Mime 
-			return imgName;
+			return imgName.toLowerCase();
 		}
 	}])
 
-	.filter('urlImg', [function(){
+	.filter('urlImg', ['$filter', function($filter){
 		return function(imgName, uri, ext) {
 			if( arguments.length < 3 ){
 				console.log('just \"imgName, uri, ext\" arguments for \"urlImg\" filter');
@@ -27,8 +27,8 @@
 			// check extention reference
 			( ext.charAt(0) !== '.') ?
 			ext = '.'+ext : ext;			
-		
-			return uri.toLowerCase()+imgName.toLowerCase()+ext.toLowerCase();
+			
+			return uri.toLowerCase()+ $filter('normalizeNameImg')(imgName) +ext.toLowerCase();
 		};
 	}]);
 
