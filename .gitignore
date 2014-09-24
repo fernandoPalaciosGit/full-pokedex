@@ -4,6 +4,7 @@ node_modules/
 bower_components/
 version-curso/
 images/
+data/
 tmp
 .DS_Store
 .idea

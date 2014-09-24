@@ -3,6 +3,13 @@
 		<div class="page-header">
 			<h1>pokedex</h1>
 		</div>
+		
 
+		<div ng-repeat="pokemon in pokemons">
+			<h2>{{pokemon.name}} <small>{{pokemon.species}}</small></h2>
+    		<img ng-src="{{pokemon.name | urlImg : 'images/pokedex' : '.jpg'}}">
+    		
+			<!-- <pre>{{pokemon | json}}</pre> -->
+		</div>
 	</section>
 </div>
