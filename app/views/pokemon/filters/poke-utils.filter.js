@@ -2,10 +2,21 @@
 
 	angular.module('pokeBoxApp.pokemon.filters', [])
 
+	// after setting the SRC of <img>, normilize extrange characters
+	.filter('normalizeNameImg', [function(){
+		return function(imgName){
+
+			imgName = imgName	.replace('♀', 'f')			//Nidoran♀
+									.replace('♂', 'm')			//Nidoran♂
+									.replace(/\'|\.|\s/g, ''); //Farfetch'd, Mr. Mime 
+			return imgName;
+		}
+	}])
+
 	.filter('urlImg', [function(){
-		return function(resource, uri, ext) {
+		return function(imgName, uri, ext) {
 			if( arguments.length < 3 ){
-				console.log('just \"resource, uri, ext\" arguments for \"urlImg\" filter');
+				console.log('just \"imgName, uri, ext\" arguments for \"urlImg\" filter');
 				return true;
 			}
 			 
@@ -17,7 +28,7 @@
 			( ext.charAt(0) !== '.') ?
 			ext = '.'+ext : ext;			
 		
-			return uri.toLowerCase()+resource.toLowerCase()+ext.toLowerCase();
+			return uri.toLowerCase()+imgName.toLowerCase()+ext.toLowerCase();
 		};
 	}]);
 
