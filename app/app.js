@@ -13,7 +13,8 @@
 
 	  // modules of pokedex
 	  'pokeBoxApp.pokedex',
-	  'pokeBoxApp.pokedex.controllers'
+	  'pokeBoxApp.pokedex.controllers',
+	  'pokeBoxApp.pokedex.partial-directives'
 	]).
 
 	// servicio de rutade vista por defecto

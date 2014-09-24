@@ -6,10 +6,10 @@
 		
 
 		<div ng-repeat="pokemon in pokemons">
-			<h2>{{pokemon.name}} <small>{{pokemon.species}}</small></h2>
-    		<img ng-src="{{pokemon.name | urlImg : 'images/pokedex' : '.jpg' }}">
-    		
-			<!-- <pre>{{pokemon | json}}</pre> -->
+			<pokemon-name></pokemon-name>
+			<pokedex-image></pokedex-image>
+			
+			<!-- <pre ng-if="$first">{{pokemon | json}}</pre> -->
 		</div>
 	</section>
 </div>

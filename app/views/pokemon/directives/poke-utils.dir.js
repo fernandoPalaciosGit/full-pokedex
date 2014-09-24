@@ -12,7 +12,8 @@
 
 				// attrs for image loader must be defined
 				if( !uri || !resource || !ext){
-					console.log('missing some data attributes : \"resource, uri, ext\"in <image-pokedex>');
+					console.log(uri);
+					console.log('missing some data attributes : \"resource, uri, ext\" in <image-pokedex>');
 					return true;
 				}
 
