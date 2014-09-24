@@ -3,10 +3,10 @@
 	angular.module('pokeBoxApp', [
 	  'ngRoute',
 	  'pokeBoxApp.version',
+	  'pokeBoxApp.util-filters',
 	  
 	  // modules of pokemon
 	  'pokeBoxApp.pokemon', // routing
-	  'pokeBoxApp.pokemon.filters', // filters
 	  'pokeBoxApp.pokemon.controllers', // controllers
 	  'pokeBoxApp.pokemon.util-directives', // several directives
 	  'pokeBoxApp.pokemon.partial-directives', //templates directives
