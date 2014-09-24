@@ -12,7 +12,8 @@
 	  'pokeBoxApp.pokemon.partial-directives', //templates directives
 
 	  // modules of pokedex
-	  'pokeBoxApp.pokedex'
+	  'pokeBoxApp.pokedex',
+	  'pokeBoxApp.pokedex.controllers'
 	]).
 
 	// servicio de rutade vista por defecto
