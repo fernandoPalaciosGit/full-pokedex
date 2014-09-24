@@ -1,5 +1,5 @@
 (function(){
-	var PokedexController = function($scope){
+	var PokemonController = function($scope){
 		var urlImages = "images/pokemon/";
 
 		$scope.pokemon = {
@@ -40,7 +40,7 @@
 
 	angular.module('pokeBoxApp.pokemon.controllers', [])
 
-	.controller('PokedexCtrl', ['$scope', PokedexController])
+	.controller('PokemonCtrl', ['$scope', PokemonController])
 
 	.controller('TabsCtrl', ['$scope', TabsController]);
 }());

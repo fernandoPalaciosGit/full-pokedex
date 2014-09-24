@@ -72,10 +72,11 @@ h3 {
   width: 24px;
   vertical-align: middle; }
 
-.view-pokemon:first-child {
+.view-pokemon:first-child, .view-pokedex:first-child {
   margin-top: 90px; }
-.view-pokemon li, .view-pokemon h2:first-letter, .view-pokemon h3:first-letter {
+.view-pokemon li, .view-pokemon h2:first-letter, .view-pokemon h3:first-letter, .view-pokedex li, .view-pokedex h2:first-letter, .view-pokedex h3:first-letter {
   text-transform: capitalize; }
+
 .view-pokemon .avatar {
   max-width: 440px;
   width: 100%;

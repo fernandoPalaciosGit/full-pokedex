@@ -45,42 +45,42 @@
 	.directive('pokedexData', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokemon/directives/partials/poke-data.tmpl.html'
+			templateUrl: 'views/pokemon/partials/poke-data.tmpl.html'
 		};
 	}])
 
 	.directive('pokedexStats', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokemon/directives/partials/poke-stats.tmpl.html'
+			templateUrl: 'views/pokemon/partials/poke-stats.tmpl.html'
 		};
 	}])
 
 	.directive('pokedexEvolution', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokemon/directives/partials/poke-evol.tmpl.html'
+			templateUrl: 'views/pokemon/partials/poke-evol.tmpl.html'
 		};
 	}])
 
 	.directive('pokemonName', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokemon/directives/partials/poke-name.tmpl.html'
+			templateUrl: 'views/pokemon/partials/poke-name.tmpl.html'
 		};
 	}])
 
 	.directive('pokemonImage', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'pokemon/directives/partials/poke-image.tmpl.html'
+			templateUrl: 'views/pokemon/partials/poke-image.tmpl.html'
 		};
 	}])
 
 	.directive('pokedexComments', [function(){
 		return {
 			restrict: 'E',
-			templateUrl: "pokemon/directives/partials/poke-comments.tmpl.html",
+			templateUrl: "views/pokemon/partials/poke-comments.tmpl.html",
 			// controllerAs: 'CommentsCtrl', // no necessary with $scope
 			controller: ['$scope', CommentsController]
 		};

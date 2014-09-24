@@ -38,8 +38,10 @@
 	      </div>
 	    </div>
   </header>
-
-    <div ng-view></div>
+	
+	<div class="container-fluid">
+		<div ng-view></div>
+	</div>
 	 
   <!-- TOP LEFT RIBBON -->
   <div class="github-fork-ribbon-wrapper right-bottom">
@@ -53,13 +55,18 @@
   -->
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+
   <script src="app.js"></script>
-  <script src="pokemon/pokemon.js"></script>
-  <script src="pokemon/controllers/pokemon.ctrl.js"></script>
-  <script src="pokemon/filters/poke-utils.filter.js"></script>
-  <script src="pokemon/directives/poke-utils.dir.js"></script>
-  <script src="pokemon/directives/poke-partials.dir.js"></script>
+
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
+
+  <script src="views/pokemon/pokemon.js"></script>
+  <script src="views/pokemon/controllers/pokemon.ctrl.js"></script>
+  <script src="views/pokemon/filters/poke-utils.filter.js"></script>
+  <script src="views/pokemon/directives/poke-utils.dir.js"></script>
+  <script src="views/pokemon/directives/poke-partials.dir.js"></script>
+
+  <script src="views/pokedex/pokedex.js"></script>
 </body>
 </html>

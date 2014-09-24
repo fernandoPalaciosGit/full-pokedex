@@ -9,13 +9,15 @@
 	  'pokeBoxApp.pokemon.filters', // filters
 	  'pokeBoxApp.pokemon.controllers', // controllers
 	  'pokeBoxApp.pokemon.util-directives', // several directives
-	  'pokeBoxApp.pokemon.partial-directives' //templates directives
+	  'pokeBoxApp.pokemon.partial-directives', //templates directives
 
 	  // modules of pokedex
+	  'pokeBoxApp.pokedex'
 	]).
 
-	config(['$routeProvider', function($routeProvider) {
-	  $routeProvider.otherwise({redirectTo: '/pokemon'});
+	// servicio de rutade vista por defecto
+	config(['$routeProvider', function($route) {
+		$route.otherwise({redirectTo: '/pokedex'});
 	}]);
 }());
  

@@ -10,3 +10,4 @@ tmp
 *.map
 *.scss
 **/.sass-cache/*
+NOTAS.md
