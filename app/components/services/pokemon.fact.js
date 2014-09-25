@@ -6,7 +6,7 @@
 			// maintain a dormant state until all promises have just run 
 			var deferred = $q.defer();
 
-			$http.get('data/pokemons.json')
+			$http.get('data/pokemons.json', {cache: true})
 						.success(function(data){
 							deferred.resolve(data); // catch the data
 						})

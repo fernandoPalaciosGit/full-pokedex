@@ -1,11 +1,7 @@
-<h3>{{pokemon.imagesName.evolution.length}} evolutions from {{pokemon.name}}</h3>
-<div class="pokeEvo-list" ng-repeat="pokeEvo in pokemon.imagesName.evolution">
+<h3>{{pokemon.evolution.length}} evolutions from {{pokemon.name}}</h3>
+<div class="pokeEvo-list" ng-repeat="pokeEvo in pokemon.evolution">
    <a href="#">
-   	<img	alt="image from {{pokeEvo}} evolution"
-				image-pokedex
-				data-uri="{{getUrlImg( pokemon.id )}}"
-				data-resource="{{pokeEvo}}"
-				data-ext="jpg">
+      <img ng-src="{{pokeEvo | urlImg : 'images/pokedex' : '.jpg' }}">
      <p>
        <strong>{{pokeEvo}}</strong>
      </p>

@@ -5,11 +5,12 @@
 	// after setting the SRC of <img>, normilize extrange characters
 	.filter('normalizeNameImg', [function(){
 		return function(imgName){
-
-			imgName = imgName	.replace('♀', 'f')			//Nidoran♀
-									.replace('♂', 'm')			//Nidoran♂
-									.replace(/\'|\.|\s/g, ''); //Farfetch'd, Mr. Mime 
-			return imgName.toLowerCase();
+			if( !!imgName ){
+				imgName = imgName	.replace('♀', 'f')			//Nidoran♀
+										.replace('♂', 'm')			//Nidoran♂
+										.replace(/\'|\.|\s/g, ''); //Farfetch'd, Mr. Mime 
+				return imgName.toLowerCase();
+			}
 		}
 	}])
 
