@@ -6,9 +6,13 @@
 							$scope.pokemons = data;
 						});
 
-		PokeFact.getSinglePokeID('005').then(function(data){
+		PokeFact.getSinglePokeID('032').then(function(data){
 			console.log(data); // when $q rejected the promise, then() never executed
 		});
+
+		PokeFact.getSinglePokeName("Farfetch'd").then(function(data){
+			console.log(data); // when $q rejected the promise, then() never executed
+		});		
 	};
 
 	angular.module('pokeBoxApp.pokedex.controllers', [])
