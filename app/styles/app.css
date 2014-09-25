@@ -1,8 +1,5 @@
 @charset "UTF-8";
 @CHARSET "UTF-8";
-/* ==========================================================================
-   default Author styles
-   ========================================================================== */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -62,45 +59,6 @@ h3 {
   font-size: 1.17em;
   margin: 1em 0; }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-.header-pokedex .navbar {
-  font-weight: bold;
-  padding: 5px 0 10px; }
-.header-pokedex .glyph {
-  width: 24px;
-  vertical-align: middle; }
-
-.view-pokemon:first-child, .view-pokedex:first-child {
-  margin-top: 90px; }
-.view-pokemon li, .view-pokemon h2:first-letter, .view-pokemon h3:first-letter, .view-pokedex li, .view-pokedex h2:first-letter, .view-pokedex h3:first-letter {
-  text-transform: capitalize; }
-
-.view-pokemon .avatar {
-  max-width: 440px;
-  width: 100%;
-  margin-bottom: 20px; }
-.view-pokemon .nav-tabs {
-  text-transform: capitalize;
-  margin-bottom: 10px;
-  cursor: pointer;
-  margin: 30px 0; }
-.view-pokemon .list-pokeAblt {
-  list-style: disc outside none;
-  margin-top: 10px; }
-.view-pokemon .pokeAblt {
-  display: list-item; }
-
-.evolution .pokeEvo-list {
-  text-align: center; }
-.evolution .glyphicon {
-  text-align: center;
-  margin: 50px 0;
-  font-size: 2em; }
-.evolution img {
-  max-width: 150px; }
-
 .pokeType .normal {
   background-color: #a8a878;
   border: solid 1px #6d6d4e; }
@@ -156,10 +114,56 @@ h3 {
   background-color: #ee99ac;
   border: solid 1px #9b6470; }
 
+.header-pokedex .navbar {
+  font-weight: bold;
+  padding: 5px 0 10px; }
+.header-pokedex .glyph {
+  width: 24px;
+  vertical-align: middle; }
+
+.view-pokemon:first-child, .view-pokedex:first-child {
+  margin-top: 90px; }
+.view-pokemon li, .view-pokemon h2:first-letter, .view-pokemon h3:first-letter, .view-pokedex li, .view-pokedex h2:first-letter, .view-pokedex h3:first-letter {
+  text-transform: capitalize; }
+
+.view-pokemon .avatar {
+  max-width: 440px;
+  width: 100%;
+  margin-bottom: 20px; }
+.view-pokemon .nav-tabs {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin: 30px 0; }
+.view-pokemon .list-pokeAblt {
+  list-style: disc outside none;
+  margin-top: 10px; }
+.view-pokemon .pokeAblt {
+  display: list-item; }
+
+.evolution .pokeEvo-list {
+  text-align: center; }
+.evolution .glyphicon {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 2em; }
+.evolution img {
+  max-width: 150px; }
+
 /*Angle takes advantage of html5 validation forms and binding classes on inputs*/
 .form-control.ng-invalid.ng-dirty {
   border-color: red; }
 .form-control.ng-valid.ng-dirty {
   border-color: green; }
+
+.pokemon {
+  padding: 20px;
+  margin-bottom: 10px;
+  border: solid 1px #D9230F;
+  border-radius: 20px; }
+  .pokemon:hover {
+    border: solid 5px #D9230F; }
+  .pokemon img {
+    width: 250px; }
 
 /*# sourceMappingURL=app.css.map */
