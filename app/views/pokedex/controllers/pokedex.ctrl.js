@@ -1,11 +1,14 @@
 ( function(){
 	var PokedexController = function($scope, PokeFact){
 		$scope.pokemons = [];
-		console.log(PokeFact.getAllPokemon());
 
 		PokeFact.getAllPokemon().then(function(data){
 							$scope.pokemons = data;
 						});
+
+		PokeFact.getSinglePokeID('005').then(function(data){
+			console.log(data); // when $q rejected the promise, then() never executed
+		});
 	};
 
 	angular.module('pokeBoxApp.pokedex.controllers', [])
