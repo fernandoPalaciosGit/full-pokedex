@@ -1,17 +1,14 @@
 ( function(){
-	var PokedexController = function($scope, $http){
+	var PokedexController = function($scope, PokeFact){
 		$scope.pokemons = [];
+		console.log(PokeFact.getAllPokemon());
 
-		$http	.get('/data/pokemons.json')
-					.success(function(data){
-						$scope.pokemons = data;
-					})
-					.error(function(err){
-						console.log(err);
-					});
+		PokeFact.getAllPokemon().then(function(data){
+							$scope.pokemons = data;
+						});
 	};
 
 	angular.module('pokeBoxApp.pokedex.controllers', [])
 
-	.controller('PokedexCtrl', ['$scope', '$http', PokedexController]);
+	.controller('PokedexCtrl', ['$scope', 'PokeFact', PokedexController]);
 }() );

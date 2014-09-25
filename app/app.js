@@ -4,6 +4,7 @@
 	  'ngRoute',
 	  'pokeBoxApp.version',
 	  'pokeBoxApp.util-filters',
+	  'pokeBoxApp.services.pokemon-factory', // service for api rest
 	  
 	  // modules of pokemon
 	  'pokeBoxApp.pokemon', // routing
