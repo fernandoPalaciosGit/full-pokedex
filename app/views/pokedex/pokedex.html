@@ -5,8 +5,11 @@
 		</div>
 
 		<div class="pokemon" ng-repeat="pokemon in pokemons">
-			<pokemon-name></pokemon-name>
-			<pokedex-image></pokedex-image>
+			<a href="/#/pokemon/{{pokemon.id}}">
+				<pokemon-name></pokemon-name>
+				<pokedex-image></pokedex-image>
+				<pokedex-type></pokedex-type>
+			</a>
 			
 			<!-- <pre ng-if="$first">{{pokemon | json}}</pre> -->
 		</div>

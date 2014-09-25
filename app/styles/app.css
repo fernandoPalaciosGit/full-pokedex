@@ -157,6 +157,7 @@ h3 {
   border-color: green; }
 
 .pokemon {
+  text-align: center;
   padding: 20px;
   margin-bottom: 10px;
   border: solid 1px #D9230F;
@@ -165,5 +166,9 @@ h3 {
     border: solid 5px #D9230F; }
   .pokemon img {
     width: 250px; }
+  .pokemon pokedex-type ul {
+    margin: 20px 0 -10px; }
+    .pokemon pokedex-type ul li {
+      display: inline-block; }
 
 /*# sourceMappingURL=app.css.map */
