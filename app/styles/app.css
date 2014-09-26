@@ -48,6 +48,7 @@ h1, h2, h3, h4 {
   text-align: center; }
 
 h1 {
+  text-transform: capitalize;
   font-size: 2em;
   margin: 0.67em 0; }
 
@@ -125,6 +126,13 @@ h3 {
   margin-top: 90px; }
 .view-pokemon li, .view-pokemon h2:first-letter, .view-pokemon h3:first-letter, .view-pokedex li, .view-pokedex h2:first-letter, .view-pokedex h3:first-letter {
   text-transform: capitalize; }
+.view-pokemon .page-header .lead, .view-pokedex .page-header .lead {
+  text-transform: lowercase; }
+.view-pokemon .page-header .badge, .view-pokedex .page-header .badge {
+  display: inline; }
+.view-pokemon .page-header h1, .view-pokedex .page-header h1 {
+  text-align: left;
+  text-indent: 2em; }
 
 .view-pokemon .avatar {
   max-width: 440px;

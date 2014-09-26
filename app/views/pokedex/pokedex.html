@@ -1,7 +1,13 @@
 <div class="container">
 	<section class="view-pokedex">
 		<div class="page-header">
-			<h1>pokedex</h1>
+			<h1>pokédex
+				<span class="lead pull-right">
+					showing
+					<span class="badge">{{pokemons.length}}</span>
+					pokémons
+				</span>
+			</h1> 
 		</div>
 
 		<div class="pokemon" ng-repeat="pokemon in pokemons">
