@@ -4,7 +4,7 @@
 
 		$scope.pokemon = {};
 
-		PokeFact.getSinglePokeID('122').then(function(data){
+		PokeFact.getSinglePokeName('raichu').then(function(data){
 			console.log(data);
 			$scope.pokemon = data; // when $q rejected the promise, then() never executed
 		});

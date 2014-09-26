@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="pokemon" ng-repeat="pokemon in pokemons">
-			<a href="/#/pokemon/{{pokemon.id}}">
+			<a href="/#/pokemon/{{pokemon.name | lowercase}}">
 				<pokemon-name></pokemon-name>
 				<pokedex-image></pokedex-image>
 				<pokedex-type></pokedex-type>
