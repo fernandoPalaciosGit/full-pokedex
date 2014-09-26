@@ -18,7 +18,7 @@
 		};
 
 		// search single pokemon by id
-		var singleID = function ( id ){
+		var singleID = function ( pokeId ){
 			var deferred = $q.defer();
 
 			all().then(function(pokeList){
@@ -29,7 +29,7 @@
 					// not from prototype prop inherited
 					if(pokeList.hasOwnProperty(poke)){
 						
-						if( pokeList[poke].id === id){
+						if( pokeList[poke].id === pokeId){
 							pokemon = pokeList[poke];
 							break; // just a coincidence of pokemon
 						}
@@ -39,7 +39,7 @@
 				if( !!pokemon ){
 					deferred.resolve(pokemon);
 				} else {
-					console.log('no pokemon with id: '+id);
+					console.log('no pokemon with id: '+pokeId);
 					deferred.reject();
 				}
 			});
@@ -47,20 +47,20 @@
 			return deferred.promise;
 		};
 
-		var singleName = function ( name ){
+		var singleName = function ( pokeName ){
 			var	normalizeName = $filter('normalizeNameImg'),
 					deferred = $q.defer();
 
 			all().then(function(pokeList){
 				var result = pokeList.filter(function(poke){
-					return normalizeName(poke.name) === normalizeName(name); 
+					return normalizeName(poke.name) === normalizeName(pokeName); 
 				});
 
 				// var pokemon = result[0];
 				if( result.length > 0 ){
 					deferred.resolve( result[0] );
 				} else {
-					console.log('no pokemon with name: '+name);
+					console.log('no pokemon with name: '+pokeName);
 					deferred.reject();
 				}
 			});
