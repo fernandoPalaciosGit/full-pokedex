@@ -68,10 +68,38 @@
 			return deferred.promise;
 		};
 
+		var singleType = function ( pokeType ){
+			var	deferred = $q.defer(),
+					normalizeName = $filter('normalizeNameImg');
+
+			all().then( function(data){
+				
+				// check types inside ArrTypes
+				var result = data.filter(function(pokemon){
+					
+					return pokemon.type.some(function(type){
+						
+						return normalizeName(type) === normalizeName(pokeType); 
+					});
+				});
+
+				if( result.length > 0 ){
+					deferred.resolve( result );
+				
+				} else {
+					console.log('no pokemon with type: ' + pokeType);
+					deferred.reject();
+				}
+			} );
+
+			return deferred.promise;
+		};
+
 		return {
 			getAllPokemon: all,
 			getSinglePokeID: singleID,
-			getSinglePokeName: singleName
+			getSinglePokeName: singleName,
+			getSinglePokeType: singleType
 		};
 	};
 
