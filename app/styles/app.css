@@ -60,6 +60,9 @@ h3 {
   font-size: 1.17em;
   margin: 1em 0; }
 
+.label {
+  text-indent: 0; }
+
 .pokeType .normal {
   background-color: #a8a878;
   border: solid 1px #6d6d4e; }
@@ -148,6 +151,11 @@ h3 {
   margin-top: 10px; }
 .view-pokemon .pokeAblt {
   display: list-item; }
+.view-pokemon pokedex-image img {
+  margin: 0 auto;
+  display: block; }
+.view-pokemon pokedex-data pokedex-type ul li {
+  display: table-cell; }
 
 .evolution .pokeEvo-list {
   text-align: center; }
@@ -165,18 +173,31 @@ h3 {
   border-color: green; }
 
 .pokemon {
-  text-align: center;
-  padding: 20px;
-  margin-bottom: 10px;
-  border: solid 1px #D9230F;
-  border-radius: 20px; }
-  .pokemon:hover {
-    border: solid 5px #D9230F; }
+  height: 350px; }
   .pokemon img {
-    width: 250px; }
-  .pokemon pokedex-type ul {
-    margin: 20px 0 -10px; }
-    .pokemon pokedex-type ul li {
-      display: inline-block; }
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 200px;
+    max-height: 220px; }
+  .pokemon pokedex-type {
+    font-size: 22px; }
+    .pokemon pokedex-type ul {
+      margin: 5px 0;
+      padding: 0; }
+      .pokemon pokedex-type ul li {
+        display: inline-block; }
+  .pokemon h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 18px; }
+  .pokemon h1 > small {
+    color: #ccc; }
+  .pokemon .panel-body {
+    position: relative;
+    height: 250px; }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,7 +1,9 @@
 <div class="container">
 	<section class="view-pokedex">
 		<div class="page-header">
-			<h1>pokédex
+			<h1>
+				<span ng-if="type">{{type}}</span>
+				pokédex
 				<span class="lead pull-right">
 					showing
 					<span class="badge">{{pokemons.length}}</span>
@@ -10,14 +12,31 @@
 			</h1> 
 		</div>
 
-		<div class="pokemon" ng-repeat="pokemon in pokemons">
-			<a href="/#/pokemon/{{pokemon.name | normalizeNameImg}}">
-				<pokemon-name></pokemon-name>
-				<pokedex-image></pokedex-image>
-				<pokedex-type></pokedex-type>
-			</a>
-			
-			<!-- <pre ng-if="$first">{{pokemon | json}}</pre> -->
+		<div class="row" ng-repeat="group in groupped">
+			<div class="col-lg-3" ng-repeat="pokemon in group">
+				<div class="pokemon panel panel-primary">
+					
+					<div class="panel-heading">
+						<a href="/#pokemon/{{pokemon.name | normalizeNameImg}}">
+							<pokemon-name></pokemon-name>
+						</a>
+					</div>
+
+					<div class="panel-body">
+						<a href="/#pokemon/{{pokemon.name | normalizeNameImg}}">
+							<pokedex-image></pokedex-image>
+						</a>
+					</div>
+
+					<div class="panel-footer">
+						<div class="text-center">
+							<pokedex-type></pokedex-type>
+						</div>
+					</div>
+
+					<!-- <pre ng-if="$first">{{pokemon | json}}</pre> -->
+				</div>
+			</div>
 		</div>
 	</section>
 </div>

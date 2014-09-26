@@ -1,5 +1,6 @@
 <ul>
 	<li ng-repeat="pokeType in pokemon.type">
-		<span class="label pokeType {{pokeType | lowercase}}">{{pokeType}}</span>
+		<a href="/#/pokedex/{{pokeType | lowercase}}"
+			class="label pokeType {{pokeType | lowercase}}">{{pokeType}}</a>
 	</li>
 <ul>
