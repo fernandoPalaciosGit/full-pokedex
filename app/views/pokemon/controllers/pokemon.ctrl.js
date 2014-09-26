@@ -1,11 +1,11 @@
 (function(){
-	var PokemonController = function($scope, PokeFact){
-		var urlImages = "images/pokedex/";
+	var PokemonController = function($scope, $routeParams, PokeFact){
+		var	urlImages = "images/pokedex/",
+				pokeName = $routeParams.name;
 
 		$scope.pokemon = {};
 
-		PokeFact.getSinglePokeName('raichu').then(function(data){
-			console.log(data);
+		PokeFact.getSinglePokeName( pokeName ).then(function(data){
 			$scope.pokemon = data; // when $q rejected the promise, then() never executed
 		});
 
@@ -24,7 +24,7 @@
 
 	angular.module('pokeBoxApp.pokemon.controllers', [])
 
-	.controller('PokemonCtrl', ['$scope', 'PokeFact', PokemonController])
+	.controller('PokemonCtrl', ['$scope', '$routeParams', 'PokeFact', PokemonController])
 
 	.controller('TabsCtrl', ['$scope', TabsController]);
 }());
