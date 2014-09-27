@@ -1,7 +1,6 @@
 ( function( ){
-	var CommentsController = function($scope){
-		$scope.comments = [];
-		
+	var CommentsController = function($scope, CommentFact){
+		$scope.comments = CommentFact.getComit( $scope.pokeName );
 		$scope.userComment = {};
 
 		var resetUserComment = function(){
@@ -11,6 +10,11 @@
 				anonymous: false,
 				date: Date.now() //+new Date() === Date.now()
 			};
+		};
+
+		var addStorageComment = function (){
+			CommentFact.saveComit($scope.pokeName, $scope.userComment);
+			$scope.comments = CommentFact.getComit( $scope.pokeName );
 		};
 
 		/* reset use comment model when controller is loaded
@@ -32,7 +36,7 @@
 		$scope.submitComment = function(){
 			// allow only by requirements and validate inputs
 			if( !!$scope.commentsForm.$valid ){
-				$scope.comments.push( $scope.userComment );
+				addStorageComment();
 				resetUserComment();
 				// return not yet action to form inputs
 				$scope.commentsForm.$setPristine();
@@ -77,12 +81,29 @@
 		};
 	}])
 
-	.directive('pokedexComments', [function(){
+	.directive('pokedexComments', ['CommentFact', function(CommentFact){
 		return {
 			restrict: 'E',
 			templateUrl: "views/pokemon/partials/poke-comments.tmpl.html",
-			// controllerAs: 'CommentsCtrl', // no necessary with $scope
-			controller: ['$scope', CommentsController]
+			
+			// we need to pass root pokemon controller scope to CommentsController
+			scope: {
+				pokeName: '@pokeName' //as text parameter in <pokedex-comments name> 
+			},
+			
+			// use pokemonName root scope to  CommentsController
+			link: function($scope, $elm, $attr){
+				$attr.$observe('pokeName', function (newValue){
+					
+					if( !!newValue ){
+						$scope.pokeName = newValue;
+						$scope.comments = CommentFact.getComit( newValue );
+					}
+
+				});
+			},
+
+			controller: ['$scope', 'CommentFact', CommentsController],
 		};
 	}]);
 }( ) );
