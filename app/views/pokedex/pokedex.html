@@ -2,8 +2,8 @@
 	<section class="view-pokedex">
 		<div class="page-header">
 			<h1>
-				<span ng-if="type">{{type}}</span>
-				pokédex
+				<span ng-if="type" class="label pokeType {{type}}">{{type}} pokédex</span>
+				<span ng-if="!type">pokédex</span>
 				<span class="lead pull-right">
 					showing
 					<span class="badge">{{pokemons.length}}</span>

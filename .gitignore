@@ -12,3 +12,5 @@ tmp
 *.scss
 **/.sass-cache/*
 NOTAS.md
+NOTES.md
+TODO.md

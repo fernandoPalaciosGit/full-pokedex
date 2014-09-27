@@ -63,7 +63,7 @@ h3 {
 .label {
   text-indent: 0; }
 
-.pokeType .normal {
+.pokeType.normal {
   background-color: #a8a878;
   border: solid 1px #6d6d4e; }
 .pokeType.fire {
@@ -117,6 +117,24 @@ h3 {
 .pokeType.fairy {
   background-color: #ee99ac;
   border: solid 1px #9b6470; }
+
+body {
+  background-color: #FCFCFC; }
+
+.btn-prymary {
+  background-image: linear-gradient(#E72510, #D9230F 6%, #CB210E);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe72510', endColorstr='#ffcb210e', GradientType=0);
+  filter: none;
+  border: 1px solid #A91B0C;
+  color: #fff; }
+  .btn-prymary .badge {
+    background-color: #FCFCFC;
+    vertical-align: middle;
+    color: red; }
+
+.container {
+  width: auto; }
 
 .header-pokedex .navbar {
   font-weight: bold;
@@ -174,6 +192,8 @@ h3 {
 
 .pokemon {
   height: 350px; }
+  .pokemon:hover {
+    box-shadow: 10px 5px 5px red; }
   .pokemon img {
     position: absolute;
     top: 0;
@@ -193,7 +213,8 @@ h3 {
   .pokemon h1 {
     margin: 0;
     color: #fff;
-    font-size: 18px; }
+    font-size: 16px;
+    text-align: left; }
   .pokemon h1 > small {
     color: #ccc; }
   .pokemon .panel-body {
