@@ -103,7 +103,32 @@
 		};
 	};
 
+	var CommentFactory = function( $window ){
+		var localStorage = $window.localStorage; // window service
+
+		// return JSON localstorage comments 
+		var getComments = function ( pokeName ){
+			var comments = localStorage.getItem( pokeName );
+			comments =	( !comments ) ? [] : JSON.parse( comments );
+			return comments;
+		};
+
+		// save string localStorage comments 
+		var saveComment = function ( pokeName, commit ){
+			var comments = getComments( pokeName );
+			comments.push( commit );
+			localStorage.setItem( pokeName, JSON.stringify(comments) );
+		};
+
+		return {
+			saveComit : saveComment,
+			getComit : getComments
+		};
+	};
+
 	angular.module('pokeBoxApp.services.pokemon-factory', [])
 
-	.factory( 'PokeFact', ['$http', '$q', '$filter', PokemonFactory]);
+	.factory( 'PokeFact', ['$http', '$q', '$filter', PokemonFactory])
+
+	.factory( 'CommentFact', ['$window', CommentFactory]);
 }() );
