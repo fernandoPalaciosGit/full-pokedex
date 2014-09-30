@@ -81,6 +81,13 @@
 		};
 	}])
 
+	.directive('pokemonCard', [function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'views/pokemon/partials/poke-card.tmpl.html'
+		};
+	}])
+
 	.directive('pokedexComments', ['CommentFact', function(CommentFact){
 		return {
 			restrict: 'E',
