@@ -1,10 +1,10 @@
 (function(){
-	var PokemonController = function($scope, $routeParams, PokeFact){
+	var PokemonController = function($scope, $rootScope, $routeParams, PokeFact){
 		var	urlImages = "images/pokedex/",
 				pokeName = $routeParams.name;
 
+		$rootScope.appTitle= pokeName+" stats, abilities and evolutions";
 		$scope.pokemon = {};
-
 		PokeFact.getSinglePokeName( pokeName ).then(function(data){
 			$scope.pokemon = data; // when $q rejected the promise, then() never executed
 		});
@@ -24,7 +24,7 @@
 
 	angular.module('pokeBoxApp.pokemon.controllers', [])
 
-	.controller('PokemonCtrl', ['$scope', '$routeParams', 'PokeFact', PokemonController])
+	.controller('PokemonCtrl', ['$scope', '$rootScope', '$routeParams', 'PokeFact', PokemonController])
 
 	.controller('TabsCtrl', ['$scope', TabsController]);
 }());

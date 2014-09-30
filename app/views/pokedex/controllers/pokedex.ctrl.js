@@ -1,14 +1,14 @@
 ( function(_){
-	var PokedexController = function($scope, $routeParams, PokeFact){
+	var PokedexController = function($scope, $rootScope, $routeParams, PokeFact){
 		var	pokeType = $routeParams.type,
-
-				// 
+		
 				partition = function(data, n){
 					return _.chain(data).groupBy(function (element, index) {
 						return Math.floor(index / n);
 					}).toArray().value();
 				};
 
+		$rootScope.appTitle= "full api collecion of pokedex national";
 		$scope.pokemons = [];
 		$scope.groupped = {};
 
@@ -33,5 +33,5 @@
 
 	angular.module('pokeBoxApp.pokedex.controllers', [])
 
-	.controller('PokedexCtrl', ['$scope', '$routeParams', 'PokeFact', PokedexController]);
+	.controller('PokedexCtrl', ['$scope', '$rootScope', '$routeParams', 'PokeFact', PokedexController]);
 } (_) );
