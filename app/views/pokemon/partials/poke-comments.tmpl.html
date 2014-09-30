@@ -62,7 +62,7 @@
      	</div>
 		
 		<!-- SHOW COMMENTS -->
-      <blockquote ng-repeat="comment in comments">
+      <blockquote ng-repeat=" comment in comments | orderBy : 'date' : true ">
         <p>{{comment.body}}</p>
         <footer>
              Comment by 
