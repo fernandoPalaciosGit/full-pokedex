@@ -1,5 +1,14 @@
 <div class="container" ng-controller="PokemonCtrl">
-	<article class="view-pokemon">
+	<div class="view-pokemon" ng-if=" !pokemon.name ">
+		 <div class="page-header">
+		   <h1>Error</h1>
+		 </div>
+		 <div class="alert alert-danger">
+		   <p><a href="#/pokedex">Pokémon not found, select into Pokedex</a></p>
+		 </div>
+	</div>
+
+	<article class="view-pokemon" ng-if=" !!pokemon.name ">
 		<div class="page-header">
 			<pokemon-name></pokemon-name>
 		</div>
@@ -39,6 +48,7 @@
 
 		<!-- COMMENTS -->
 		<pokedex-comments poke-name="{{pokemon.name}}"></pokedex-comments>
-		
 	</article>
+
+
 </div> <!-- PokedexController -->
