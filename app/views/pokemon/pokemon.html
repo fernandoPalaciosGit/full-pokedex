@@ -1,13 +1,4 @@
 <div class="container" ng-controller="PokemonCtrl">
-	<div class="view-pokemon" ng-if=" !pokemon.name ">
-		 <div class="page-header">
-		   <h1>Error</h1>
-		 </div>
-		 <div class="alert alert-danger">
-		   <p><a href="#/pokedex">Pokémon not found, select into Pokedex</a></p>
-		 </div>
-	</div>
-
 	<article class="view-pokemon" ng-if=" !!pokemon.name ">
 		<div class="page-header">
 			<pokemon-name></pokemon-name>
@@ -21,9 +12,9 @@
 			<div class="col-md-6 pokedex" ng-controller="TabsCtrl">
 				<!-- NAVIGATE IN TABS -->
 				<ul class="nav nav-tabs nav-justified">
-	           <li ng-class=" { active : tab === 1 }"><a ng-click="selecTab(1)">pokedex</a></li>
-	           <li ng-class=" { active : tab === 2 }"><a ng-click="selecTab(2)">stats</a></li>
-	           <li ng-class=" { active : tab === 3 }"><a ng-click="selecTab(3)">evolution</a></li>
+	           <li ng-class=" isActive(1) "><a ng-click=" selecTab(1) ">pokedex</a></li>
+	           <li ng-class=" isActive(2) "><a ng-click=" selecTab(2) ">stats</a></li>
+	           <li ng-class=" isActive(3) "><a ng-click=" selecTab(3) ">evolution</a></li>
 	         </ul>
 
 	         <div class="tab-content">
@@ -50,5 +41,12 @@
 		<pokedex-comments poke-name="{{pokemon.name}}"></pokedex-comments>
 	</article>
 
-
+	<div class="view-pokemon" ng-if=" !pokemon.name ">
+		 <div class="page-header">
+		   <h1>Error</h1>
+		 </div>
+		 <div class="alert alert-danger">
+		   <p><a href="#/pokedex">Pokémon not found, select into Pokedex</a></p>
+		 </div>
+	</div>
 </div> <!-- PokedexController -->
