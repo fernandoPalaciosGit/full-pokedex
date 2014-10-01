@@ -21,9 +21,14 @@
           <div class="col-sm-6">
             <textarea	class="form-control" ng-model="userComment.body"
             				name="commentBody"
-            				placeholder="tell us what you think about {{pokemon.name | uppercase}}"
+            				placeholder="tell us what you think about {{pokeName | uppercase}}"
             				required="required">
             </textarea>
+            <div class="pokemon-rate">
+            	<label for="rate-pokemon">rate for {{pokeName}}</label> : 
+					<rating 	ng-model="userComment.rate" max="5"
+								state-on="glyphicon-star" state-off="glyphicon-star-empty"></rating>
+            </div>
           </div>
           <div class="col-sm-4">
             <input	type="email" ng-model="userComment.email" class="form-control"
@@ -65,6 +70,7 @@
       <blockquote class="block-comments" ng-repeat=" comment in comments | orderBy : 'date' : true ">
         
         <p>{{comment.body}}</p>
+        <rating ng-model="comment.rate"></rating>
         <footer>
              <img ng-if="!comment.anonymous"
                   width="48px" class="img-circle"

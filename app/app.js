@@ -3,6 +3,7 @@
 	angular.module('pokeBoxApp', [
 	  'ngRoute',
 	  'angular-md5', // gravatar module
+	  'ui.bootstrap.rating', // bootstrap-ui for rating
 	  'pokeBoxApp.version',
 	  'pokeBoxApp.util-filters',
 	  'pokeBoxApp.services.pokemon-factory', // service for api rest

@@ -8,7 +8,8 @@
 				body: '',
 				email: '',
 				anonymous: false,
-				date: Date.now(), //+new Date() === Date.now()
+				date: Date.now(), //+new Date() === Date.now(),
+				rate: 1,
 				hashGravatar: md5.createHash( $scope.userComment.email || '' ) // gravatar md5 hash
 			};
 		};
