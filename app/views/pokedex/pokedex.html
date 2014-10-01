@@ -1,20 +1,37 @@
 <div class="container">
 	<section class="view-pokedex">
 		<div class="page-header">
-			<h1>
-				<span ng-if="type" class="label pokeType {{type}}">{{type}} pokédex</span>
-				<span ng-if="!type">pokédex</span>
-				<span class="lead pull-right">
-					showing
-					<span class="badge">{{pokemons.length}}</span>
-					pokémons
-				</span>
-			</h1> 
+
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<h1>
+						<span ng-if="type" class="label pokeType {{type}}">{{type}} pokédex</span>
+						<span ng-if="!type">pokédex</span>
+						<span class="lead">
+							showing
+							<span class="badge">{{ filterPokemon.length }}</span>
+							pokémons
+						</span>
+					</h1> 
+				</div>
+				
+				<div class="col-xs-12 col-md-6">
+					<div class="search-pokemon">
+            		<input	type="search" class="form-control input-lg"
+            					placeholder="Search Pókemons by name"
+            					ng-model="searchTerm">
+					</div>
+				</div>
+			</div>
+			
 		</div>
 
 		<div class="row" ng-repeat="group in groupped">
-			<div class="col-lg-3" ng-repeat="pokemon in group">
-				<pokemon-card></pokemon-card>
+			
+			<div	class="col-lg-3"
+					ng-repeat=" pokemon in group ">
+							
+					<pokemon-card></pokemon-card>
 			</div>
 		</div>
 	</section>

@@ -151,9 +151,10 @@ body {
   text-transform: lowercase; }
 .view-pokemon .page-header .badge, .view-pokedex .page-header .badge {
   display: inline; }
+.view-pokemon .page-header .search-pokemon, .view-pokedex .page-header .search-pokemon {
+  margin: 0.83em 0; }
 .view-pokemon .page-header h1, .view-pokedex .page-header h1 {
-  text-align: left;
-  text-indent: 2em; }
+  text-align: left; }
 
 .view-pokemon .avatar {
   max-width: 440px;
