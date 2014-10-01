@@ -1,5 +1,5 @@
 ( function( ){
-	var CommentsController = function($scope, CommentFact){
+	var CommentsController = function($scope, md5, CommentFact){
 		$scope.comments = CommentFact.getComit( $scope.pokeName );
 		$scope.userComment = {};
 
@@ -8,7 +8,8 @@
 				body: '',
 				email: '',
 				anonymous: false,
-				date: Date.now() //+new Date() === Date.now()
+				date: Date.now(), //+new Date() === Date.now()
+				hashGravatar: md5.createHash( $scope.userComment.email || '' ) // gravatar md5 hash
 			};
 		};
 
@@ -110,7 +111,7 @@
 				});
 			},
 
-			controller: ['$scope', 'CommentFact', CommentsController],
+			controller: ['$scope', 'md5', 'CommentFact', CommentsController],
 		};
 	}]);
 }( ) );

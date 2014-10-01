@@ -62,13 +62,16 @@
      	</div>
 		
 		<!-- SHOW COMMENTS -->
-      <blockquote ng-repeat=" comment in comments | orderBy : 'date' : true ">
+      <blockquote class="block-comments" ng-repeat=" comment in comments | orderBy : 'date' : true ">
+        
         <p>{{comment.body}}</p>
         <footer>
-             Comment by 
+             <img ng-if="!comment.anonymous"
+                  width="48px" class="img-circle"
+                  src="http://gravatar.com/avatar/{{comment.email | gravatar}}">
              <a	ng-if=" !comment.anonymous "
              		href="mailto:{{comment.email}}"> {{comment.email}}</a> 
-             <em ng-if=" !!comment.anonymous ">anonimous user</em>
+             <em ng-if=" !!comment.anonymous ">Comment by anonimous user</em>
              on <span> {{comment.date | date:'medium'}} </span>
         </footer>
       </blockquote>

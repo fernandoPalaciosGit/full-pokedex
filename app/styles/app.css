@@ -222,4 +222,7 @@ body {
     position: relative;
     height: 250px; }
 
+.block-comments img {
+  vertical-align: middle; }
+
 /*# sourceMappingURL=app.css.map */

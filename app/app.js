@@ -2,6 +2,7 @@
 
 	angular.module('pokeBoxApp', [
 	  'ngRoute',
+	  'angular-md5', // gravatar module
 	  'pokeBoxApp.version',
 	  'pokeBoxApp.util-filters',
 	  'pokeBoxApp.services.pokemon-factory', // service for api rest
