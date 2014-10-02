@@ -28,7 +28,7 @@
 									filter="filterPokemon"
 									groupped="groupped">
 					</div>
-					
+
 					<div class="top10-pokemon col-md-4" ng-if="type">
 						<a class="form-control input-lg btn btn-prymary btn-block" href="#/pokedex">full pokedex</a>
 					</div>
@@ -37,7 +37,7 @@
 			
 		</div>
 
-		<div class="row" ng-repeat="group in groupped">
+		<div class="row" ng-repeat="group in groupped | limitTo:currentPage ">
 			
 			<div	ng-repeat=" pokemon in group "
 					class="col-lg-3">
@@ -46,3 +46,14 @@
 		</div>
 	</section>
 </div>
+
+<aside class="pagination-pokedex">
+	  	<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+	      <div class="container">
+	        <div class="navbar-header">
+	        	
+					<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+	        </div>
+	      </div>
+	    </div>
+</aside>

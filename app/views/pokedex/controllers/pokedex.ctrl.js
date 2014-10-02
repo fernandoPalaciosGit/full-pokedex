@@ -18,6 +18,22 @@
 		$scope.groupped = {};
 		$scope.searchTerm = '';
 
+		// PAGINATION SCOPE
+		$scope.totalItems = 0;
+		$scope.currentPage = 1;
+		
+		$scope.pageChanged = function() {
+			console.log('Page changed to: ' + $scope.currentPage+'; Total: '+$scope.totalItems);
+		};
+
+		// reload total pagination
+		$scope.$watch('filterPokemon', function(newValue, oldValue){
+			if( !!newValue ){
+				$scope.totalItems = $scope.filterPokemon.length;
+				$scope.currentPage = 1;
+			}
+		});
+
 		$scope.$watch('searchTerm', function(newValue, oldValue) {
 			if( !!newValue ){
 				var filterPokemon = $filter('filter')($scope.pokemons, {name : $scope.searchTerm});

@@ -4,6 +4,7 @@
 	  'ngRoute',
 	  'angular-md5', // gravatar module
 	  'ui.bootstrap.rating', // bootstrap-ui for rating
+	  'ui.bootstrap.pagination', // bootstrap-ui for pagination
 	  'pokeBoxApp.version',
 	  'pokeBoxApp.util-filters',
 	  'pokeBoxApp.services.pokemon-factory', // service for api rest
