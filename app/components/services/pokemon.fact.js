@@ -113,6 +113,30 @@
 			return comments;
 		};
 
+		var getPokemonRate = function (){
+			var dataStorage = [];
+
+			for (var prop in localStorage) {
+				
+				if(localStorage.hasOwnProperty(prop) && prop != ''){
+				 	var pokemonStorage = {};
+					pokemonStorage.pokemon = prop;
+					pokemonStorage.rate = 0;
+					
+					JSON.parse(localStorage[prop]).forEach(function(objComment, index, arr){
+						if( !!objComment.rate && objComment.rate > 0 ){
+							pokemonStorage.rate += objComment.rate; 
+						}
+					});
+
+					if( pokemonStorage.rate > 0 ){
+						dataStorage.push( pokemonStorage );
+					}
+				}
+			}
+			return dataStorage;
+		}
+
 		// save string localStorage comments 
 		var saveComment = function ( pokeName, commit ){
 			var comments = getComments( pokeName );
@@ -122,7 +146,8 @@
 
 		return {
 			saveComit : saveComment,
-			getComit : getComments
+			getComit : getComments,
+			getPokeRate : getPokemonRate
 		};
 	};
 

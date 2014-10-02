@@ -151,8 +151,14 @@ body {
   text-transform: lowercase; }
 .view-pokemon .page-header .badge, .view-pokedex .page-header .badge {
   display: inline; }
-.view-pokemon .page-header .search-pokemon, .view-pokedex .page-header .search-pokemon {
-  margin: 0.83em 0; }
+.view-pokemon .page-header .search-pokemon, .view-pokemon .page-header .top10-pokemon, .view-pokedex .page-header .search-pokemon, .view-pokedex .page-header .top10-pokemon {
+  margin: 0.83em 0;
+  vertical-align: middle; }
+  .view-pokemon .page-header .search-pokemon a, .view-pokemon .page-header .top10-pokemon a, .view-pokedex .page-header .search-pokemon a, .view-pokedex .page-header .top10-pokemon a {
+    line-height: 2.5em;
+    text-transform: uppercase; }
+.view-pokemon .page-header .top10-pokemon *, .view-pokedex .page-header .top10-pokemon * {
+  text-transform: uppercase; }
 .view-pokemon .page-header h1, .view-pokedex .page-header h1 {
   text-align: left; }
 

@@ -16,10 +16,21 @@
 				</div>
 				
 				<div class="col-xs-12 col-md-6">
-					<div class="search-pokemon">
+					<div class="search-pokemon col-md-8">
             		<input	type="search" class="form-control input-lg"
             					placeholder="Search Pókemons by name"
             					ng-model="searchTerm">
+					</div>
+
+					<div class="top10-pokemon col-md-4" ng-show="!type">
+						<input	class="form-control input-lg btn btn-prymary btn-block"
+									type="button" value="top 10" load-top10
+									filter="filterPokemon"
+									groupped="groupped">
+					</div>
+					
+					<div class="top10-pokemon col-md-4" ng-if="type">
+						<a class="form-control input-lg btn btn-prymary btn-block" href="#/pokedex">full pokedex</a>
 					</div>
 				</div>
 			</div>
